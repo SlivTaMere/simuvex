@@ -771,11 +771,11 @@ class SimIROp(object):
             return claripy.fpToFP(claripy.fp.RM_RNE, rounded_bv, claripy.fp.FSort.from_size(args[1].length))
 
     def _op_generic_pack_StoU_saturation(self, args, src_size, dst_size):
-    """
-    Generic pack with unsigned saturation.
-    Split args in chunks of src_size signed bits and in pack them into unsigned saturated chunks of dst_size bits.
-    Then chunks are concatenated resulting in a BV of len(args)*dst_size/src_size*len(args[0]) bits.
-    """
+        """
+        Generic pack with unsigned saturation.
+        Split args in chunks of src_size signed bits and in pack them into unsigned saturated chunks of dst_size bits.
+        Then chunks are concatenated resulting in a BV of len(args)*dst_size/src_size*len(args[0]) bits.
+        """
         if src_size <= 0 or dst_size <= 0:
             raise SimOperationError("Can't pack from or to zero or negative size" % self.name)
         result = None
@@ -795,9 +795,9 @@ class SimIROp(object):
         return self._op_concat(args)
         
     def _op_Iop_QNarrowBin16Sto8Ux16(self, args):
-    """
-    PACKUSWB Pack with Unsigned Saturation. Two 128 bits operands version (66 0F 67...).
-    """
+        """
+        PACKUSWB Pack with Unsigned Saturation. Two 128 bits operands version (66 0F 67...).
+        """
         return self._op_generic_pack_StoU_saturation(args, 16, 8)
 
     #def _op_Iop_Yl2xF64(self, args):
@@ -832,9 +832,9 @@ class SimIROp(object):
     
     @staticmethod
     def saturate(value, min_value, max_value):
-    """
-    Generic saturation on numbers.
-    """
+        """
+        Generic saturation on numbers.
+        """
         if value > max_value:
             return max_value
         if value < min_value:
