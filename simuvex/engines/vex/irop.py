@@ -790,10 +790,10 @@ class SimIROp(object):
                 else:
                     result = self._op_concat((result, dst_value))
         return result
-    
+
     def _op_Iop_64x4toV256(self, args) :
         return self._op_concat(args)
-        
+
     def _op_Iop_QNarrowBin16Sto8Ux16(self, args):
         """
         PACKUSWB Pack with Unsigned Saturation. Two 128 bits operands version (66 0F 67...).
@@ -829,7 +829,7 @@ class SimIROp(object):
         for _ in xrange(n):
             out = claripy.fpMul(rm, arg, out)
         return out
-    
+
     @staticmethod
     def saturate(value, min_value, max_value):
         """

@@ -169,7 +169,7 @@ def test_some_vector_ops():
     calc_result = translate(s, 'Iop_Min8Sx16', (a, b))
     correct_result = s.se.BVV(0xffff0000000100020002000200020002, 128)
     nose.tools.assert_true(s.se.is_true(calc_result == correct_result))
-    
+
     calc_result = translate(s, 'Iop_QNarrowBin16Sto8Ux16', (a, b))
     correct_result = s.se.BVV(0x00000102030405060202020202020202, 128)
     nose.tools.assert_true(s.se.is_true(calc_result == correct_result))
