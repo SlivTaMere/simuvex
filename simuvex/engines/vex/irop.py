@@ -769,7 +769,7 @@ class SimIROp(object):
             rm = self._translate_rm(args[0])
             rounded_bv = claripy.fpToSBV(rm, args[1].raw_to_fp(), args[1].length)
             return claripy.fpToFP(claripy.fp.RM_RNE, rounded_bv, claripy.fp.FSort.from_size(args[1].length))
-    
+
     def _op_generic_pack_StoU_saturation(self, args, src_size, dst_size):
     """
     Generic pack with unsigned saturation.
