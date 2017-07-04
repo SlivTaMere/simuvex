@@ -791,7 +791,7 @@ class SimIROp(object):
                     result = self._op_concat((result, dst_value))
         return result
 
-    def _op_generic_StoU_saturation(self, value, min_value, max_value):
+    def _op_generic_StoU_saturation(self, value, min_value, max_value): #pylint:disable=no-self-use
         """
         Return unsigned saturated BV from signed BV.
         Min and max value should be unsigned.
